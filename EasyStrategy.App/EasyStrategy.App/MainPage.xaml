@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EasyStrategy.App"
+             xmlns:co="clr-namespace:EasyStrategy.App.Components"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             xmlns:vw="clr-namespace:EasyStrategy.App.ViewModels"
+             x:Class="EasyStrategy.App.MainPage"
+             BackgroundColor="White"
+             x:Name="tela">
+    <ContentPage.BindingContext>
+        <vw:MainViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <co:EasyColapseScrollView HeaderMaxHeight="{StaticResource ScreenHeight0_3}" 
+                                  HeaderMinHeight="{StaticResource ActionBarSize}"
+                                  ObservableColapseChanged="EasyColapseScrollView_ObservableColapseChanged">
+            <co:EasyColapseScrollView.Header>
+                <co:EasyAbsoluteLayout BackgroundColor="Black">
+                    <Grid x:Name="header1" BackgroundColor="Black" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{StaticResource ActionBarSize}"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="{StaticResource ActionBarSize}"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{StaticResource ActionBarSize}"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <co:EasyIcon Grid.Column="0" Grid.Row="0" Icon="Logo" TextColor="White" FontSize="{StaticResource ActionBarSize}"/>
+                    </Grid>
+                    <ContentView x:Name="header2" BackgroundColor="{StaticResource Background1Color}"  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{StaticResource ActionBarSize}"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="{StaticResource ActionBarSize}"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="{StaticResource ActionBarSize}"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <co:EasyIcon Grid.Column="0" Grid.Row="0" Icon="Logo" TextColor="Black" FontSize="{StaticResource ActionBarSize}"/>
+                            <Grid x:Name="header3" Grid.ColumnSpan="3" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition Height="2*"/>
+                                </Grid.RowDefinitions>
+                                <co:EasyButton Grid.Row="0">
+                                    <co:EasyButton.Content>
+                                        <Label Text="Matriz principal São Paulo" 
+                                       TextColor="Black"
+                                       FontSize="{StaticResource SuperLargeFontSize}" 
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"/>
+                                    </co:EasyButton.Content>
+                                </co:EasyButton>
+                                <co:EasyButton Grid.Row="1">
+                                    <co:EasyButton.Content>
+                                        <Label Text="Varejo" 
+                                       TextColor="Black"
+                                       FontSize="{StaticResource LargeFontSize}" 
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"/>
+                                    </co:EasyButton.Content>
+                                </co:EasyButton>
+                                <co:EasyButton Grid.Row="2">
+                                    <co:EasyButton.Content>
+                                        <Label Text="Bebidas" 
+                                       TextColor="Black"
+                                       FontSize="{StaticResource LargeFontSize}" 
+                                       HorizontalTextAlignment="Center"
+                                       VerticalTextAlignment="Center"/>
+                                    </co:EasyButton.Content>
+                                </co:EasyButton>
+                            </Grid>
+
+
+
+                        </Grid>
+                    </ContentView>
+                    <co:EasySeparatorLine AbsoluteLayout.LayoutFlags="WidthProportional, PositionProportional" AbsoluteLayout.LayoutBounds="0,1,1,-1" />
+                </co:EasyAbsoluteLayout>
+            </co:EasyColapseScrollView.Header>
+            <co:EasyColapseScrollView.Content>
+                <StackLayout Spacing="0">
+                    <Grid RowSpacing="0" ColumnSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <co:EasyButton Grid.Column="0" Grid.Row="0">
+                            <co:EasyButton.Content>
+                                <co:EasyLabel HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="{StaticResource SuperLargeFontSize}" TextColor="Black" Text="Hoje"/>
+                            </co:EasyButton.Content>
+                        </co:EasyButton>
+                        <co:EasyButton Grid.Column="1" Grid.Row="0">
+                            <co:EasyButton.Content>
+                                <co:EasyLabel HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="{StaticResource LargeFontSize}" Text="Semana"/>
+                            </co:EasyButton.Content>
+                        </co:EasyButton>
+                        <co:EasyButton Grid.Column="2" Grid.Row="0">
+                            <co:EasyButton.Content>
+                                <co:EasyLabel HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="{StaticResource LargeFontSize}" Text="Mês"/>
+                            </co:EasyButton.Content>
+                        </co:EasyButton>
+                        <co:EasySeparatorLine Grid.Column="0" Grid.Row="1" HeightRequest="5" BackgroundColor="Black"/>
+                        <co:EasySeparatorLine Grid.ColumnSpan="3" Grid.Row="2"/>
+                    </Grid>
+                    <ScrollView >
+                        <Grid Padding="5" ColumnSpacing="5" RowSpacing="5" BackgroundColor="LightGray">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Grid.Column="0" Grid.Row="0" BackgroundColor="White" HeightRequest="{StaticResource ScreenWidth0_2}">
+                                <co:EasyLabel FontSize="{StaticResource DefaultFontSize}" Text="Meta"/>
+                                <co:EasyLabel FontSize="{StaticResource SuperLargeFontSize}" TextColor="Black" Text="R$ 250.000,00"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Column="1" Grid.Row="0"  BackgroundColor="White" HeightRequest="{StaticResource ScreenWidth0_2}">
+                                <co:EasyLabel FontSize="{StaticResource DefaultFontSize}" Text="Realizado"/>
+                                <co:EasyLabel FontSize="{StaticResource SuperLargeFontSize}" TextColor="Black" Text="R$ 145.569,98" Margin="0,0,0,10"/>
+                            </StackLayout>
+
+                            <oxy:PlotView Grid.ColumnSpan="2" Grid.Row="1" Model="{Binding Temp}" BackgroundColor="White" HeightRequest="{StaticResource ScreenWidth0_3}"/>
+                            <co:EasyLabel Grid.ColumnSpan="2" Grid.Row="1" FontSize="{StaticResource SuperLargeFontSize}" Text="Realizado X Meta"/>
+
+
+                        </Grid>
+                    </ScrollView>
+                </StackLayout>
+            </co:EasyColapseScrollView.Content>
+        </co:EasyColapseScrollView>
+    </ContentPage.Content>
+</ContentPage>

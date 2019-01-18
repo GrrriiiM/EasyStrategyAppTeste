@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<co:EasyAbsoluteLayout xmlns:co="clr-namespace:EasyStrategy.App.Components"
+                         xmlns="http://xamarin.com/schemas/2014/forms" 
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         xmlns:bv="clr-namespace:EasyStrategy.App.Behaviors"
+                         x:Class="EasyStrategy.App.Components.EasyColapseScrollView">
+    <co:EasyNestedScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+        <co:EasyNestedScrollView.Behaviors>
+            <bv:ObservablePropertyBehavior x:Name="observablePropertyBehavior" MaxValue="1" MinValue="0" PropertyName="ScrollY" ObservablePropertyChanged="ObservablePropertyBehavior_ObservablePropertyChanged"/>
+        </co:EasyNestedScrollView.Behaviors>
+        <StackLayout Padding="0" Margin="0" Spacing="0">
+            <ContentView x:Name="headerSpace" Padding="0" Margin="0" VerticalOptions="Start"/>
+            <ContentView x:Name="content" Padding="0" Margin="0" />
+        </StackLayout>
+    </co:EasyNestedScrollView>
+    <ContentView x:Name="header" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" AbsoluteLayout.LayoutBounds="0,0,1,-1" />
+</co:EasyAbsoluteLayout>
