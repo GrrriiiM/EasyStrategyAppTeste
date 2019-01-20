@@ -27,18 +27,26 @@ namespace EasyStrategy.App.Components
 
         private string easyIconsToString(EasyIcons easyIcons)
         {
-            switch (easyIcons)
+            var icons = new string[]
             {
-                case EasyIcons.Logo:
-                    return "\uF681";
-                default:
-                    return "";
-            }
+                "\uF681",
+                "\uf201",
+                "\uf4fe",
+                "\uf3d1",
+                "\uf1fe",
+                "\uf200"
+            };
+            return icons[(int)easyIcons];
         }
 
         public enum EasyIcons
         {
-            Logo = 0
+            Logo = 0,
+            Goal = 1,
+            UserCog = 2,
+            Money = 3,
+            ChartArea = 4,
+            ChartPie = 5
         }
 	}
 }

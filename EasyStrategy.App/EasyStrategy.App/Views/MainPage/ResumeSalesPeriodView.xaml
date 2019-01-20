@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<co:EasyGrid xmlns:co="clr-namespace:EasyStrategy.App.Components"
+             xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vw="clr-namespace:EasyStrategy.App.Views.MainPage"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             x:Class="EasyStrategy.App.Views.MainPage.ResumeSalesPeriodView"
+             Padding="{StaticResource MarginSize}"
+             ColumnSpacing="{StaticResource MarginSize}"
+             RowSpacing="{StaticResource MarginSize}">
+    <co:EasyGrid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+    </co:EasyGrid.ColumnDefinitions>
+    <co:EasyGrid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+    </co:EasyGrid.RowDefinitions>
+    <vw:ResumeSalesValueCardView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Title="Realizado" Value="{Binding Realizado}" Icon="Money"/>
+    <vw:ResumeSalesValueCardView Grid.Column="3" Grid.ColumnSpan="3" Grid.Row="0" Title="Meta" Value="{Binding Meta}" Icon="Goal"/>
+
+    <co:EasyCardView Grid.ColumnSpan="6" Grid.Row="1" IsSquare="True" SquareHeightProportion="0.75">
+        <co:EasyCardView.NewContent>
+            <co:EasyGrid ColumnSpacing="{StaticResource MarginSize2}" RowSpacing="{StaticResource MarginSize2}">
+                <co:EasyGrid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </co:EasyGrid.ColumnDefinitions>
+                <co:EasyGrid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </co:EasyGrid.RowDefinitions>
+                <co:EasyIcon Grid.Column="0" Grid.Row="0" Icon="ChartArea" FontSize="{StaticResource SuperLargeFontSize}" TextColor="{StaticResource DarkTextColor}"/>
+                <co:EasyLabel Grid.Column="1" Grid.Row="0" Text="Realizado x Hora" FontSize="{StaticResource LargeFontSize}" TextColor="{StaticResource DarkTextColor}"/>
+                <oxy:PlotView Grid.ColumnSpan="2" Grid.Row="1" Model="{Binding Temp}" />
+            </co:EasyGrid>
+        </co:EasyCardView.NewContent>
+    </co:EasyCardView>
+
+    <co:EasyCardView Grid.ColumnSpan="6" Grid.Row="2" IsSquare="True" SquareHeightProportion="0.75">
+        <co:EasyCardView.NewContent>
+            <co:EasyGrid ColumnSpacing="{StaticResource MarginSize2}" RowSpacing="{StaticResource MarginSize2}">
+                <co:EasyGrid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </co:EasyGrid.ColumnDefinitions>
+                <co:EasyGrid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </co:EasyGrid.RowDefinitions>
+                <co:EasyIcon Grid.Column="0" Grid.Row="0" Icon="ChartPie" FontSize="{StaticResource SuperLargeFontSize}" TextColor="{StaticResource DarkTextColor}"/>
+                <co:EasyLabel Grid.Column="1" Grid.Row="0" Text="Realizado x Categoria" FontSize="{StaticResource LargeFontSize}" TextColor="{StaticResource DarkTextColor}"/>
+                <oxy:PlotView Grid.ColumnSpan="2" Grid.Row="1" Model="{Binding Temp2}" />
+            </co:EasyGrid>
+        </co:EasyCardView.NewContent>
+    </co:EasyCardView>
+
+    <co:EasyCardView Grid.ColumnSpan="6" Grid.Row="3" IsSquare="False">
+        <co:EasyCardView.NewContent>
+            <co:EasyGrid ColumnSpacing="{StaticResource MarginSize2}" RowSpacing="{StaticResource MarginSize2}">
+                <co:EasyGrid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </co:EasyGrid.ColumnDefinitions>
+                <co:EasyGrid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </co:EasyGrid.RowDefinitions>
+                <co:EasyIcon Grid.Column="0" Grid.Row="0" Icon="ChartPie" FontSize="{StaticResource SuperLargeFontSize}" TextColor="{StaticResource DarkTextColor}"/>
+                <co:EasyLabel Grid.Column="1" Grid.Row="0" Text="Categorias" FontSize="{StaticResource LargeFontSize}" TextColor="{StaticResource DarkTextColor}"/>
+                <ListView Grid.ColumnSpan="2" Grid.Row="1" ItemsSource="{Binding VendaCategorias}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <co:EasyGrid>
+                                    <co:EasyGrid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </co:EasyGrid.ColumnDefinitions>
+                                    <co:EasyBoxView Grid.Column="0" Grid.Row="0" Margin="{StaticResource MarginSize2}" IsSquare="True" BackgroundColor="{Binding Color}"/>
+                                    <co:EasyLabel Grid.Column="1" Grid.Row="0" Text="{Binding Categoria}" VerticalTextAlignment="Center" FontSize="{StaticResource SmallFontSize}" TextColor="{StaticResource DarkTextColor}" />
+                                    <co:EasyLabel Grid.Column="2" Grid.Row="0" Text="{Binding Valor, StringFormat='{0:C0}'}" VerticalTextAlignment="Center" FontSize="{StaticResource DefaultFontSize}" TextColor="{StaticResource DarkTextColor}" />
+                                </co:EasyGrid>
+                                
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </co:EasyGrid>
+        </co:EasyCardView.NewContent>
+    </co:EasyCardView>
+</co:EasyGrid>

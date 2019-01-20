@@ -1,0 +1,31 @@
+﻿<co:EasyColapseScrollView xmlns="http://xamarin.com/schemas/2014/forms"
+                          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                          xmlns:local="clr-namespace:EasyStrategy.App"
+                          xmlns:co="clr-namespace:EasyStrategy.App.Components"
+                          xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+                          xmlns:vw="clr-namespace:EasyStrategy.App.Views.MainPage"
+                          x:Class="EasyStrategy.App.Views.MainPage.PageView"
+                          HeaderMaxHeight="{StaticResource ScreenHeight0_3}" 
+                          HeaderMinHeight="{StaticResource ActionBarSize}">
+    <co:EasyColapseScrollView.Header>
+        <vw:HeaderView/>
+    </co:EasyColapseScrollView.Header>
+    <co:EasyColapseScrollView.Content>
+        <co:EasyGrid>
+            <co:EasyGrid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </co:EasyGrid.RowDefinitions>
+            <vw:ResumeSalesHeaderView Grid.Row="0"/>
+            <co:EasyAbsoluteLayout Grid.Row="1" >
+                <ScrollView  AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1">
+
+                    <vw:ResumeSalesView/>
+                </ScrollView>
+                <co:EasyGradientView AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional" AbsoluteLayout.LayoutBounds="0,0,1,-1" StartColor="{StaticResource DarkColor}" EndColor="Transparent" BackgroundColor="Transparent" Orientation="Vertical" HeightRequest="{StaticResource MarginSize2}"/>
+
+            </co:EasyAbsoluteLayout>
+            
+        </co:EasyGrid>
+    </co:EasyColapseScrollView.Content>
+</co:EasyColapseScrollView>

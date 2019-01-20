@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<co:EasyCardView xmlns="http://xamarin.com/schemas/2014/forms" 
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:co="clr-namespace:EasyStrategy.App.Components" 
+                 x:Class="EasyStrategy.App.Views.MainPage.ResumeSalesValueCardView"
+                 IsSquare="True"
+                 SquareHeightProportion="0.5">
+    <co:EasyCardView.NewContent>
+        <co:EasyGrid ColumnSpacing="{StaticResource MarginSize}" RowSpacing="{StaticResource MarginSize}">
+            <co:EasyGrid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </co:EasyGrid.RowDefinitions>
+            <co:EasyGrid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+            </co:EasyGrid.ColumnDefinitions>
+            <co:EasyIcon x:Name="icon" Grid.Row="0" Grid.Column="0" FontSize="{StaticResource SuperLargeFontSize}" TextColor="{StaticResource DarkTextColor}" />
+            <co:EasyLabel x:Name="title" Grid.Row="0" Grid.Column="1" FontSize="{StaticResource DefaultFontSize}" TextColor="{StaticResource DarkTextColor}" />
+            <co:EasyLabel x:Name="valueLabel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" FontSize="{StaticResource LargeFontSize}" TextColor="{StaticResource DarkTextColor}" />
+        </co:EasyGrid>
+    </co:EasyCardView.NewContent>
+</co:EasyCardView>

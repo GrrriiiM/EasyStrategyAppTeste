@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EasyStrategy.App.Components.EasyCardView"
+             BackgroundColor="{StaticResource SeparatorColor}"
+             Padding="{StaticResource SeparatorSize}">
+    <ContentView.Content>
+        <ContentView x:Name="content" BackgroundColor="{StaticResource LightBackgroundColor}" Padding="{StaticResource MarginSize2}"/>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<co:EasyAbsoluteLayout xmlns:co="clr-namespace:EasyStrategy.App.Components"
+                       xmlns="http://xamarin.com/schemas/2014/forms" 
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:vw="clr-namespace:EasyStrategy.App.Views.MainPage"
+                       x:Class="EasyStrategy.App.Views.MainPage.ResumeSalesView">
+    <co:EasyStackLayout>
+        <vw:ResumeSalesPeriodView />
+    </co:EasyStackLayout>
+</co:EasyAbsoluteLayout>

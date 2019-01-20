@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<co:EasyGrid xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:co="clr-namespace:EasyStrategy.App.Components" 
+             x:Class="EasyStrategy.App.Views.MainPage.ResumeSalesHeaderView" 
+             BackgroundColor="{StaticResource DarkColor}">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="auto"/>
+        <RowDefinition Height="auto"/>
+    </Grid.RowDefinitions>
+    <co:EasyLabelButton Grid.Column="0" Grid.Row="0" Text="Hoje" FontSize="{StaticResource LargeFontSize}"/>
+    <co:EasyLabelButton Grid.Column="1" Grid.Row="0" Text="Semana" FontSize="{StaticResource DefaultFontSize}"/>
+    <co:EasyLabelButton Grid.Column="2" Grid.Row="0" Text="Mês" FontSize="{StaticResource DefaultFontSize}"/>
+    <co:EasySeparatorLine Grid.Column="0" Grid.Row="1" 
+                          HeightRequest="{StaticResource MarginSize}" BackgroundColor="{StaticResource LightTextColor}"/>
+</co:EasyGrid>

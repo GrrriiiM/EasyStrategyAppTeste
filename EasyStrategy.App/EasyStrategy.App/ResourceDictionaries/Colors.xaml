@@ -2,10 +2,13 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="EasyStrategy.App.ResourceDictionaries.Colors">
-    <Color x:Key="Background1Color">White</Color>
-    <Color x:Key="PrimaryColor">White</Color>
-    <Color x:Key="SecondaryColor">White</Color>
-    <Color x:Key="AccentColor">White</Color>
+    <Color x:Key="DarkBackgroundColor">LightGray</Color>
+    <Color x:Key="LightBackgroundColor">White</Color>
+    <Color x:Key="DarkColor">#1c5d99</Color>
+    <Color x:Key="Dark2Color">#2c6da9</Color>
+    <Color x:Key="LightColor">#9d9fd6</Color>
+    <Color x:Key="DarkTextColor">Black</Color>
+    <Color x:Key="LightTextColor">White</Color>
     <Color x:Key="ShadowColor">Black</Color>
-    <Color x:Key="SeparatorColor">LightGray</Color>
+    <Color x:Key="SeparatorColor">Transparent</Color>
 </ResourceDictionary>

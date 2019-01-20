@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<co:EasyButton xmlns:co="clr-namespace:EasyStrategy.App.Components" 
+               xmlns="http://xamarin.com/schemas/2014/forms" 
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               x:Class="EasyStrategy.App.Components.EasyLabelButton" 
+               BackgroundColor="{StaticResource DarkColor}"
+               HeightRequest="{StaticResource ActionBarSize}">
+    <co:EasyButton.Content>
+        <co:EasyLabel x:Name="label" 
+                      HorizontalTextAlignment="Center" 
+                      VerticalTextAlignment="Center"
+                      FontSize="{StaticResource SuperLargeFontSize}" 
+                      TextColor="{StaticResource LightTextColor}"/>
+    </co:EasyButton.Content>
+</co:EasyButton>

@@ -81,7 +81,7 @@ namespace EasyStrategy.App.Components
 
         private void recalcValues()
         {
-            content.HeightRequest = (this.HeaderMaxHeight - this.HeaderMinHeight) + App.ScreenHeight;
+            content.HeightRequest = App.ScreenHeight - (this.HeaderMinHeight);
             observablePropertyBehavior.MaxValue = this.HeaderMaxHeight - this.HeaderMinHeight;
             observablePropertyBehavior.MinValue = 0;
             headerSpace.HeightRequest = this.HeaderStartHeight > 0 ? this.HeaderStartHeight : this.HeaderMaxHeight;
